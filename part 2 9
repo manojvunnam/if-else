@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+int speed;
+scanf("%d",&speed);
+if(speed>80){
+    printf("speed is exceeded");
+}else{
+    printf("speed in limit");
+}
+    return 0;
+}
