@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int a;
+    scanf("%d",&a);
+    if((a%3==0)&&(a%7==0)){
+        printf("a is multiple of 3 and 7");
+    }else{
+        printf("a is not multiple of 3 and 7");
+    }
+    return 0;
+}
