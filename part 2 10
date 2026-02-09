@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int attempts;
+    scanf("%d",&attempts);
+    if(attempts>3){
+    printf("attempts are exceeded");
+    }else{
+        printf("attempts are not exceeded");
+    }
+    return 0;
+}
