@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int n;
+    scanf("%d",&n);
+    if(n>5){
+        printf("valid email");
+    }else{
+        printf("in valid email");
+    }
+    return 0;
+}
