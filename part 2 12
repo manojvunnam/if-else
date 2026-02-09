@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int age;
+    scanf("%d",&age);
+    if(age<12){
+        printf("discounted ticket");
+    }else{
+        printf("general ticket");
+    }
+    return 0;
+}
