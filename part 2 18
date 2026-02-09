@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int cart;
+    scanf("%d",&cart);
+    if(cart>=499){
+        printf("free delivery");
+    }else{
+        printf("no free delivery");
+    }
+    return 0;
+}
