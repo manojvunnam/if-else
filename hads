@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        long long A[N];
+        for (int i = 0; i < N; i++)
+            scanf("%lld", &A[i]);
+
+        long long cand[2];
+        int cnt = 0;
+        int ok = 1;
+
+        for (int i = 0; i < N / 2 && ok; i++) {
+            long long x = A[i];
+            long long y = A[N - 1 - i];
+
+            if (x == y)
+                continue;
+
+            if (llabs(x - y) != 2) {
+                ok = 0;
+                break;
+            }
+
+            long long s = (x < y) ? x : y;
+            long long p1 = s;
+            long long p2 = s + 1;
+
+            if (cnt == 0) {
+                cand[0] = p1;
+                cand[1] = p2;
+                cnt = 2;
+            } else {
+                long long temp[2];
+                int newCnt = 0;
+
+                for (int a = 0; a < cnt; a++) {
+                    if (cand[a] == p1 || cand[a] == p2) {
+                        int exists = 0;
+                        for (int b = 0; b < newCnt; b++)
+                            if (temp[b] == cand[a])
+                                exists = 1;
+                        if (!exists)
+                            temp[newCnt++] = cand[a];
+                    }
+                }
+
+                cnt = newCnt;
+                for (int k = 0; k < cnt; k++)
+                    cand[k] = temp[k];
+
+                if (cnt == 0)
+                    ok = 0;
+            }
+        }
+
+        if (ok)
+            printf("Yes\n");
+        else
+            printf("No\n");
+    }
+
+    return 0;
+}
