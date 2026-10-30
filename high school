@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int salary;
+    scanf("%d",&salary);
+    if(salary>30000){
+        printf("eligible for bonous");
+    }else{
+        printf("not eligible for bonous");
+    }
+    return 0;
+}
